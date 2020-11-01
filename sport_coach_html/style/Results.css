@@ -1,0 +1,128 @@
+/* Sport Coach Results*/
+
+#results{
+    position: absolute;
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+    visibility: hidden;
+    overflow: hidden
+}
+#results #resultsGraph{
+    position: absolute;
+    top:10vh;
+    left: 5vw;
+    height: 70vh;
+    width: 60vw;
+    background-color: #210b7f;
+    /* background: linear-gradient(45deg, #210b7f, #8093f1); */
+    border-radius: 15px;
+}
+#results #mySecondChart{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#results #summary{
+    position: absolute;
+    top:10vh;
+    left:70vw;
+    height: 70vh;
+    width: 25vw;
+    /* background-color: #210b7f; */
+    background-color: white;
+    border-radius: 15px;
+}
+
+#results #dateParent{
+    position: relative;
+    top: 10%;
+    left: 0%;
+    text-align: center;
+}
+#results #date{
+}
+
+#results #objectifParent{
+    position: relative;
+    top:20%;
+    left: 0;
+    text-align: center;
+}
+#results #objectif{
+}
+
+#results #resultatsParent{
+    position: relative;
+    top:30%;
+    left: 0%;
+    text-align: center;
+}
+#results #resultats{
+}
+
+#results #tempsMoyenParent{
+    position: relative;
+    top:40%;
+    left: 0%;
+    text-align: center;
+}
+#results #tempsMoyen{
+}
+
+#results #saveParent{
+    position: relative;
+    top:49%;
+}
+#results #saveResultsButton {
+    position: relative;
+    left: 50%;
+    height: 7vh;
+    width: 13vw;
+    transform: translate(-50%);
+    /* padding: 12px 45px; */
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(45deg, #210b7f, #8093f1);
+    box-shadow: black 3px -3px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+#results #saveResultsButton:hover{
+    box-shadow: none;
+    transform: translate(calc(-50% + 3px),-3px);
+    transition-delay: 0;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+
+
+/* ----------------------------------------------- */
+
+@keyframes bounce1 {
+    20%,100% {transform: translate(-50%,-50%) rotateY(360deg);}
+    50%{top: 55%;}
+    100%{top:50%;}
+}
+@keyframes bounce2 {
+    0%{top: 7vh;}
+    50%{top: 8vh;}
+    100%{top: 7vh;}
+}
+
+@keyframes lightning {
+    0%{opacity:0;}
+    10%{opacity:0;}
+    11%{opacity:1;}
+    14%{opacity:0;}
+    20%{opacity:0;}
+    21%{opacity:1;}
+    24%{opacity:0;}
+    104%{opacity:0;}
+}

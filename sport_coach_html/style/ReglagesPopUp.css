@@ -1,0 +1,56 @@
+#main #reglagesPopupBg{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0,0,0, 0.7);
+    visibility: hidden;
+    overflow: hidden
+}
+#main #reglagesPopup{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30vh;
+    width: 30vw;
+    background-color: white;
+    opacity: 1;
+    border-radius: 1vh;
+    text-align: center;
+}
+#main #logo{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: translate(0,-50%);
+    height: 20vh;
+    width: 20vh;
+}
+#main #reglagesPopupTextParent{
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+}
+#main #textReglagesPopup {
+    font-size: 120%;
+}
+#main #spaceShortcutBox {
+    position: relative;
+    top:0;
+    left:50%;
+    width: 50%;
+    transform: translate(-50%);
+}
+#main #spaceShortcut {
+    width: 30%;
+}
+#main #spaceShortcut:focus {
+    border-style: outset;
+}
+#main #textReglagesPopup2 {
+    font-size: 120%;
+    padding-left: 3%;
+}

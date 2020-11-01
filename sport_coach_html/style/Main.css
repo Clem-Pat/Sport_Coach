@@ -1,0 +1,291 @@
+/* Sport Coach 2 Main */
+
+#main {
+    width:100vw;
+    height:100%;
+    visibility: hidden;
+    overflow: hidden
+}
+#main #mainDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 800px;
+}
+#main #mainTitle {
+    position:relative;
+    width: 80%;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 250%;
+    color: #210b7f;
+    text-align: center;
+    /* animation: bounce2 4s infinite; */
+}
+#main .input{
+    font-size: 110%;
+    display: inline-block;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgb(150,150,150);
+    padding-left: 5px;
+}
+
+#main #firstLineParent{
+    text-align: center;
+    position: relative;
+    top: 15%;
+}
+
+#main #tableParent{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    top: 0%;
+    left: 0%;
+}
+#main #seriesTable {
+    width: 100%;
+    font-size: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+    background-color: rgb(255,255,255);
+}
+#main #seriesTable .td {
+    background-color: rgb(255,255,255);
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 7px;
+    padding-left:25px;
+}
+#main #seriesTable .tr:hover td{
+    background-color: #dddddd;
+}
+
+#main #counterParent{
+    position: relative;
+    display: inline-block;
+    top: 0%;
+    left: 0%;
+    width: 20%;
+    height: 50%;
+    margin-left: 5%;
+}
+#main #TotalRepetitionBox {
+    font-size: 90%;
+    background-color: white;
+    text-align: center;
+}
+#main #TotalRepetition {
+    font-size: 100%;
+}
+#main #textTotalIdeal {
+    font-size: 70%;
+    text-align: center;
+    margin: 0px auto;
+}
+#main #SerieRepetitionBox {
+    font-size: 90%;
+    text-align: left;
+    margin-top: 5%;
+    background-color: white;
+}
+#main #serieRepetition {
+    font-size: 100%;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin: 0px auto;
+}
+#main #textSurNbreRepetitionParSerie{
+    width: 20px;
+    height: 20px;
+    font-size: 50%;
+    text-align: center;
+    margin: 0px auto;
+}
+#main #stop{
+    width: 100%;
+    height: 27%;
+    margin-top: 10%;
+    font-size: 150%;
+    text-decoration: none;
+    background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 28%, rgba(255,188,188,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    box-shadow: black 3px -3px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+#main #stop:hover {
+    box-shadow: none;
+    transform: translate3d(3px,-3px,0);
+    transition-delay: 0;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+#main #stop:active {
+    background: linear-gradient(45deg, rgba(255,188,188,1) 0%, rgba(255,0,0,1) 72%, rgba(255,0,0,1) 100%);
+}
+
+#main #buttonsParent{
+    position: relative;
+    display: inline-block;
+    top: 10%;
+    left: 0%;
+    width: 46px;
+    height: 240px;
+    margin-left: 5%;
+}
+#main .plusButton{
+    margin-bottom: 30%;
+    font-size: 130%;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 50%;
+    outline: none;
+    color: white;
+    background: linear-gradient(45deg, #210b7f, #8093f1);
+    box-shadow: black 3px -3px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+#main .plusButton:hover {
+    box-shadow: none;
+    transform: translate3d(3px,-3px,0);
+    transition-delay: 0;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+#main .plusButton:active {
+    background: linear-gradient(45deg, #8093f1, #210b7f);
+}
+#main #plus5{
+    width: 100%;
+    height: 19%;
+    text-decoration: none;
+}
+#main #plus10{
+    width: 100%;
+    height: 19%;
+    text-decoration: none;
+}
+#main #plus25{
+    width: 100%;
+    height: 19%;
+    text-decoration: none;
+}
+#main #plus50{
+    width: 100%;
+    height: 19%;
+    text-decoration: none;
+}
+
+#main #reglages{
+    position:fixed;
+    display: inline-block;
+    top: 50%;
+    left: 90%;
+    width: 5%;
+    height: 6%;
+    font-size: 150%;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    background: rgb(173,216,230);
+    display: flex;
+    border-style: none;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    cursor: pointer;
+}
+#main #reglages:hover{
+    color: white;
+}
+#main #reglages:active{
+    color: #210b7f;
+}
+
+#main #secondLineParent{
+    text-align: center;
+    position: relative;
+    top: 15%;
+}
+
+#main #graph{
+    position: relative;
+    display: inline-block;
+    left: 0%;
+    width: 40%;
+    background-color: white;
+}
+
+#main #chronometerParent{
+    position: relative;
+    display: inline-block;
+    top: -10%;
+    width: 30%;
+    height: 100%;
+    margin-top: 0%;
+    margin-left: 5%;
+}
+#main .chronometer {
+    width: 100%;
+    height: 45%;
+    text-align: center;
+    margin: 5% auto;
+    background-color: white;
+}
+#main #textTotalChronometer1 {
+    font-size: 300%;
+}
+#main #textTotalChronometer2 {
+    font-size: 100%;
+}
+#main #textSerieChronometer1 {
+    font-size: 300%;
+}
+#main #textSerieChronometer2 {
+    font-size: 100%;
+}
+
+#main #musicParent{
+    position: relative;
+    display: inline-block;
+    top: 8%;
+    left: 90%;
+    height: 20px;
+}
+#main #deezerImg{
+    position: relative;
+    display: inline-block;
+    top: 20%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+#main #textDeezer{
+    position:relative;
+    display: inline-block;
+    left: -1%;
+    font-size: 15px;
+    color: #210b7f;
+    cursor: pointer;
+}
+#main #textDeezer:hover{
+    color: white;
+}

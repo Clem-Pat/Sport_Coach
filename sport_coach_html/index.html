@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<!-- Sport Coach -->
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sport Coach</title>
+    <link rel="stylesheet" href="style/Settings.css">
+    <link rel="stylesheet" href="style/Main.css">
+    <link rel="stylesheet" href="style/ReglagesPopUp.css">
+    <link rel="stylesheet" href="style/Results.css">
+    <link rel="shortcut icon" href="ressources/muscle.png">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.0/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+</head>
+
+<body class='body'>
+    <img id="lightning" src="ressources/lightning.png" alt="lightningImg">
+
+
+    <div id="init">
+        <img id="initImg" src="ressources/muscle.png" alt="initImg">
+    </div>
+
+    <div id="settings">
+
+        <div id="settingsDiv" class="settingsDiv">
+            <div id="settingsTitle" class="title">Choisis ton objectif</div>
+
+            <div class="parent" id="objectifParent">
+                    <label class="inputBox" id="objectifRepetitionsInputBox">
+                        <input class="input" id="objectifRepetitions" type="text" name="Objectif nombre de répétitions" value="1000" onkeyup="updateValue(event)" onfocus="this.setSelectionRange(0, this.value.length)" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" data-initWidth="50" data-initPaddingLeft="5">
+                    </label>
+                    <label id="textObjectifRepetitions" class="text">
+                    pompes en :
+                    </label>
+                    <label class="inputBox" id="objectifTempsInputBox">
+                        <input class="input" id="objectifTemps" type="time" name="Objectif en combien de temps" step="2" value="00:25:00" onkeyup="updateValue(event)" onfocus="this.setSelectionRange(0, this.value.length)" data-initWidth="100" data-initPaddingLeft="5">
+                    </label>
+            </div>
+
+            <div class="parent" id="nbreRepetitionParSerieParent">
+                <label id="textNbreRepetitionParSerie" class="text">Nombre de pompes par série :</label>
+                <label class="inputBox" id="nbreRepetitionParSerieInputBox">
+                    <input class="input" id="nbreRepetitionParSerie" type="text" name="Nombre de répétitions par série" value="50" onkeyup="updateValue(event)" onfocus="this.setSelectionRange(0, this.value.length)" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" data-initWidth="50" data-initPaddingLeft="5">
+                </label>
+            </div>
+
+            <div class="parent" id="typeRepetitionParent">
+                <label id="textTypeRepetition" class="text">Aujourd'hui tu fais des</label>
+                <label class="inputBox" id="typeRepetitionInputBox">
+                    <input class="input" id="typeRepetition" type="text" name="Type de répétition" value="pompes" onkeyup="updateValue(event)" onfocus="this.setSelectionRange(0, this.value.length)" data-initWidth="80" data-initPaddingLeft="5">
+                </label>
+            </div>
+
+            <div class="parent" id="nomFichierParent">
+                <label id="textNomFichier" class="text">Enregistrer les résultats sous :</label>
+                <label class="inputBox" id="nomFichierInputBox">
+                    <input class="input" id="nomFichier" type="text" name="Nom de l'enregistrement" value="Séance_1" onkeyup="updateValue(event)" onfocus="this.setSelectionRange(0, this.value.length)" data-initWidth="110" data-initPaddingLeft="5">
+                </label>
+                <!-- <label id="textNomFichier2" class="text">_pompes_</label> -->
+            </div>
+
+            <div id="cPartiParent">
+                <button id="cParti" class="button" type="button" name="cParti" onclick="cParti()">C'est parti</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="compteARebours">
+        <div id="numero" class="numero">5</div>
+    </div>
+
+    <main id="main">
+
+        <div id="mainDiv" class="mainDiv">
+            <div id="mainTitle" class="title">Objectif : </div>
+            <div id="firstLineParent" class="firstParent">
+                <div id="tableParent" class="parent">
+                    <table id="seriesTable">
+                        <tr class="tr">
+                            <td id="actualSerie" class="td"> <br> <br> </td>
+                            <td id="actualSerieChronometer" class="td">00:00:00</td>
+                        </tr>
+                        <!-- <tr class="tr"> -->
+                            <td id="lastSerie" class="td"> <br> </td>
+                            <td id="lastSerieChronometer" class="td"> <br> </td>
+                        </tr>
+                        <tr class="tr">
+                            <td id="secondLastSerie" class="td"> <br> </td>
+                            <td id="secondLastSerieChronometer" class="td"> <br> </td>
+                        </tr>
+                        <tr class="tr">
+                            <td id="thirdLastSerie" class="td"> <br> </td>
+                            <td id="thirdLastSerieChronometer" class="td"> <br> </td>
+                        </tr>
+                        <tr class="tr">
+                            <td id="fourthLastSerie" class="td"> <br> </td>
+                            <td id="fourthLastSerieChronometer" class="td"> <br> </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="counterParent" class="parent">
+                    <div id="TotalRepetitionBox" class="label">Total :
+                        <label id="TotalRepetition" class="label">0</label>
+                        <label id="textTotalIdeal" class="second-label">0</label>
+                    </div>
+
+                    <div id="SerieRepetitionBox" class="label">Dans cette série :
+                        <label id="serieRepetition" class="label">0</label>
+                        <label id="textSurNbreRepetitionParSerie" class="label">/20</label>
+                    </div>
+
+                    <button id="stop" class="button" type="button" name="stop" onclick="stop()">Stop</button>
+                </div>
+
+                <div id="buttonsParent" class="parent">
+                    <button id="plus5" class="plusButton" type="button" name="5" onclick="plus(event)">+5</button>
+                    <button id="plus10" class="plusButton" type="button" name="10" onclick="plus(event)">+10</button>
+                    <button id="plus25" class="plusButton" type="button" name="25" onclick="plus(event)">+25</button>
+                    <button id="plus50" class="plusButton" type="button" name="50" onclick="plus(event)">+50</button>
+                </div>
+                <button id="reglages" class="button" type="button" name="reglages" onclick="reglages()">&#9881;</button>
+            </div>
+
+            <div id="secondLineParent" class="firstParent">
+                <div id="graph"><canvas id="myChart" class="Chart"></canvas></div>
+
+                <div id="chronometerParent" class="parent">
+                    <div id="totalChronometerParent" class="chronometer">
+                        <label id="textTotalChronometer1" class="first-label">00:00:00</label>
+                        <label id="textTotalChronometer2" class="second-label">Total</label>
+                    </div>
+
+                    <div id="serieChronometerParent" class="chronometer">
+                        <label id="textSerieChronometer1" class="first-label">00:00:00</label>
+                        <label id="textSerieChronometer2" class="second-label">Cette série</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="musicParent" class="parent">
+                <img id="deezerImg" src="ressources/deezer.png" onmouseout="textHover('#210b7f')" onmouseover="textHover('white')" onclick="window.open('https://www.deezer.com/en/playlist/4437869642','mywindow');" alt="deezerImg">
+                <div id="textDeezer" class="deezer" onmouseout="textHover('#210b7f')" onmouseover="textHover('white')" onclick="window.open('https://www.deezer.com/en/playlist/4437869642','mywindow');">Pas de musique ?</div>
+            </div>
+
+        </div>
+
+        <div id="reglagesPopupBg" class="popupBg">
+            <div id="reglagesPopup" class="popup">
+                <img id="logo" src="ressources/muscle.png" alt="logo">
+                <div id="reglagesPopupTextParent" class="text">
+                    <label id="textReglagesPopup">En appuyant sur 'Espace' je veux ajouter :</label>
+                    <div class="inputBox" id="spaceShortcutBox">
+                        <input class="input" id="spaceShortcut" type="text" name="spaceShortcut" value="5" onkeyup="updateSpaceShortcut(event)" onfocus="this.setSelectionRange(0, this.value.length)" data-initWidth="30" maxlength="2" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')">
+                        <label for="spaceShortcut" id="textReglagesPopup2">répétitions</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="results">
+        <div id="resultsGraph"><canvas id="mySecondChart" class="Chart"></canvas></div>
+        <div id="summary" class="summary">
+            <div id="dateParent" class="parent">
+                <label id="date" class="date"> x month year </label>
+            </div>
+            <div id="objectifParent" class="parent">
+                <div id="objectifTitle">Objectif :</div>
+                <div id="objectif">-- répétitions en --:--:--</div>
+            </div>
+            <div id="resultatsParent" class="parent">
+                <div id="resultatsTitle">Nombre de répétitions réalisé(e)s :</div>
+                <div id="resultats">-- en --:--:--</div>
+            </div>
+            <div id="tempsMoyenParent" class="parent">
+                <div id="tempsMoyenTitle">Temps moyen pour une série de -- répétitions :</div>
+                <div id="tempsMoyen">00:00:00</div>
+            </div>
+            <div id="saveParent" class="parent">
+                <button id="saveResultsButton" class="button" type="button" name="saveResults" onclick="save()">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="src/var.js" charset="utf-8"></script>
+<script src="src/results.js" charset="utf-8"></script>
+<script src="src/reglagesPopUp.js" charset="utf-8"></script>
+<script src="src/main.js" charset="utf-8"></script>
+<script src="src/begin.js" charset="utf-8"></script>
+
+</html>

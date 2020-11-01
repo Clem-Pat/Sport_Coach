@@ -1,0 +1,230 @@
+/* Sport Coach 2 Settings */
+
+.body {
+    margin: 0;
+    padding: 0;
+    background: rgb(173,216,230);
+    font-size: 2.5vh;
+    overflow: hidden;
+}
+
+#lightning{
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+    opacity:0;
+}
+
+#init{
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+}
+#init #initImg{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    height: 50vh;
+    width: 50vh;
+    animation: bounce1 1s;
+    animation-delay: 1s;
+    transform: translate(-50%,-50%);
+}
+
+#settings {
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+    visibility: hidden;
+}
+#settings #settingsDiv{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    height: 90vh;
+    width: 450px;
+    transform: translate(-50%, -50%);
+}
+#settings #settingsDiv #settingsTitle {
+    position: relative;
+    top:7%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    font-size: 200%;
+    color: #210b7f;
+    animation: bounce2 4s infinite;
+    text-align: center;
+}
+#settings .input{
+    font-size: 110%;
+    display: inline-block;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: rgb(150,150,150);
+    padding-left: 5px;
+}
+
+#settings #objectifParent{
+    position: relative;
+    top:25%;
+    left: 50%;
+    text-align: center;
+    height: 6%;
+    transform: translate(-50%);
+}
+#settings #textObjectifRepetitions {
+    position:relative;
+    top:0vh;
+    left: 0%;
+    font-size: 120%;
+}
+#settings #objectifRepetitionsInputBox{
+    padding-right: 5%;
+}
+#settings #objectifRepetitions {
+    width: 50px;
+}
+#settings #objectifRepetitions:focus {
+    border-style: outset;
+}
+#settings #objectifTempsInputBox{
+    padding-left: 5%;
+
+}
+#settings #objectifTemps {
+    width: 100px;
+    cursor: text;
+}
+#settings #objectifTemps:focus {
+    border-style: outset;
+}
+#settings #objectifTemps::-webkit-outer-spin-button,
+#settings #objectifTemps::-webkit-inner-spin-button,
+#settings #objectifTemps::-webkit-clear-button,
+#settings #objectifTemps::-webkit-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#settings #nbreRepetitionParSerieParent{
+    position: relative;
+    top:32%;
+    left: 50%;
+    text-align: center;
+    height: 6%;
+    transform: translate(-50%);
+}
+#settings #textNbreRepetitionParSerie {
+    font-size: 120%;
+}
+#settings #nbreRepetitionParSerieInputBox {
+    padding-left: 5%;
+}
+#settings #nbreRepetitionParSerie {
+    width: 50px;
+}
+#settings #nbreRepetitionParSerie:focus {
+    border-style: outset;
+}
+
+#settings #typeRepetitionParent{
+    position: relative;
+    top:39%;
+    left: 50%;
+    text-align: center;
+    height: 6%;
+    transform: translate(-50%);
+}
+#settings #textTypeRepetition {
+    font-size: 120%;
+}
+#settings #typeRepetitionInputBox {
+    padding-left: 5%;
+}
+#settings #typeRepetition {
+    width: 80px;
+}
+#settings #typeRepetition:focus {
+    border-style: outset;
+}
+
+#settings #nomFichierParent{
+    position: relative;
+    top:46%;
+    left: 50%;
+    text-align: center;
+    height: 10%;
+    transform: translate(-50%);
+}
+#settings #textNomFichier {
+    font-size: 120%;
+}
+#settings #nomFichierInputBox {
+    padding-left: 5%;
+}
+#settings #nomFichier {
+    width: 110px;
+}
+#settings #nomFichier:focus {
+    border-style: outset;
+}
+/* #settings #textNomFichier2 {
+    position:relative;
+    left: 80%;
+    font-size: 70%;
+} */
+
+#settings #cPartiParent{
+    position: relative;
+    top: 55%;
+    text-align: center;
+}
+#settings #cParti {
+    position: relative;
+    padding: 12px 45px;
+    font-size: 110%;
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    outline: none;
+    background: linear-gradient(45deg, #210b7f, #8093f1);
+    box-shadow: black 3px -3px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+#settings #cParti:hover{
+    box-shadow: none;
+    transform: translate(3px,-3px);
+    transition-delay: 0;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+
+/* ----------------------------------------------- */
+
+#compteARebours {
+    width:100vw;
+    height:100%;
+    visibility: hidden;
+}
+#compteARebours #numero {
+    position:absolute;
+    width: 5vw;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7em;
+    color: #210b7f;
+    text-shadow: 0 0 20px rgb(80,80,80);
+    animation: bounce1 1s infinite;
+    animation-delay: 2s
+}
+
+/* ----------------------------------------------- */
