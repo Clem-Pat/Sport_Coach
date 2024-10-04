@@ -1,6 +1,6 @@
 # Sport_Stopwatch
 
-Website [here](https://clem-pat.github.io/Sport_Coach/sport_coach_html/)
+Website [here](https://clem-pat.github.io/Sport_Stopwatch/sport_coach_html/)
 
 Small frontend interface to help you have records of your sports session. (Plots the number of repetitions in time) 
 This interface was developed for the trendy challenges ["1000 push-ups in 1 hour"](https://www.youtube.com/watch?v=4CssoaCUgw0). 
